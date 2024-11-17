@@ -1,36 +1,12 @@
 ---
+import Navigation from "@/components/Navigation.astro";
 import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title}>
-  <div class="text-white p-4 flex flex-col gap-10">
-    <div class="flex flex-col w-full">
-      <nav
-        class="flex mx-auto z-10 backdrop-blur-xl w-fit flex-row text-white font-kodeMono rounded-full lg:text-xl self-center top-5 justify-center"
-      >
-        <div
-          class="flex flex-row justify-between text-xs lg:text-base lg:bg-transparent backdrop-blur-xl lg:gap-10 rounded-full top-4"
-        >
-          <a
-            class="hover:cursor-pointer p-2 font-bold px-4 hover:bg-teaGreen hover:text-primaryDark rounded-full"
-            href="/">Home</a
-          >
-          <a
-            class="hover:cursor-pointer p-2 font-bold px-4 hover:bg-teaGreen hover:text-primaryDark rounded-full"
-            href="/posts">Blog</a
-          >
-          <a
-            class="hover:cursor-pointer p-2 font-bold px-4 hover:bg-teaGreen hover:text-primaryDark rounded-full"
-            >Resume</a
-          >
-          <a
-            class="hover:cursor-pointer p-2 font-bold px-4 hover:bg-teaGreen hover:text-primaryDark rounded-full"
-            >Contact</a
-          >
-        </div>
-      </nav>
-    </div>
+  <Navigation activeNavItem="blog" />
+  <div class="text-white p-4 flex flex-col gap-10 pt-20">
     <div
       class="flex flex-row top-0 mx-auto text-center justify-center sticky text-xl w-full lg:text-2xl font-kodeMono backdrop-blur-xl bg-primaryDark z-10 p-2 lg:p-4"
     >
