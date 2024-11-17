@@ -1,6 +1,8 @@
 import type { APIContext } from "astro";
 import { Resend } from "resend";
 
+export const prerender = false;
+
 export async function POST({ locals, request }: APIContext): Promise<Response> {
   const data = await request.formData();
   const contactEmail = data.get("email");
@@ -30,5 +32,5 @@ export async function POST({ locals, request }: APIContext): Promise<Response> {
 }
 
 export async function GET(context: APIContext): Promise<Response> {
-  return context.redirect("/thankYouForContactingMe", 307);
+  return context.redirect("/thankYouForContactingMe", 301);
 }
