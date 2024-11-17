@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Rubik Scribble";
+  src: url("/fonts/RubikScribble-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  scrollbar-color: #aef78e #caffb9;
+}
+
+html {
+  background-color: #2e4057;
+  padding: 0;
+}

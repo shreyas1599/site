@@ -1,0 +1,41 @@
+{
+  "name": "personal-site-shreyas",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro build && wrangler pages dev",
+    "astro": "astro",
+    "deploy": "astro build && wrangler pages deploy",
+    "cf-typegen": "wrangler types"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.5",
+    "@astrojs/cloudflare": "^11.2.0",
+    "@astrojs/mdx": "^3.1.2",
+    "@astrojs/react": "^3.0.10",
+    "@astrojs/tailwind": "^5.1.0",
+    "@expressive-code/plugin-line-numbers": "^0.37.1",
+    "@mdx-js/mdx": "^3.1.0",
+    "@types/react": "^18.2.58",
+    "@types/react-dom": "^18.2.19",
+    "@types/three": "^0.165.0",
+    "astro": "^4.4.4",
+    "astro-expressive-code": "^0.37.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rehype-pretty-code": "^0.14.0",
+    "resend": "4.0.1-alpha.0",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^3.4.1",
+    "three": "^0.165.0",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "wrangler": "^3.83.0"
+  }
+}

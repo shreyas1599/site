@@ -1,0 +1,92 @@
+---
+title: "Scaling an image with backdrop"
+description: "How to scale an image and centre it with a backdrop"
+tags: ["how-to", "css"]
+date: 26th July 2024
+tableOfContents:
+  ["Motivation", "What did I do"]
+---
+import {compile} from '@mdx-js/mdx'
+import { FullScreenImage } from "../../components/FullScreenImageOnExpand.tsx";
+
+<section>
+	<h1 className="text-2xl font-bold">Motivation</h1>
+	<p className="pt-2">
+		While building a landing page for work, I had to include a couple of images of the product.
+		The app is an enterprise application
+		with lots happening on it and a 1/4 screen width screenshot wasn't going to cut it. While the
+		screenshot looked good on the site, the text content of the screenshot was barely visible. So, to provide value to
+		an interested visitor on the site, I wanted to expand the image on hover.
+	</p>
+</section>
+<section className="pt-10">
+	<h1 className="text-2xl font-bold">What I did</h1>
+	<ol className="pt-2 list-disc">
+		<li>Figure out if the screen is a desktop</li>
+		<li>Use tailwind <span className="bg-black text-white w-fit p-1 rounded-lg text-sm font-mono">group</span> utility to figure out when to show text/icon that indicates the image is clickable</li>
+		<li>Use a state variable to hold whether the image is expanded or collapsed and scale accordingly</li>
+		<li>Add a backdrop that takes up the entire screen but has a zIndex less than the image</li>
+		<li>If you don't add `flex` when the image is expanded, it won't resize correctly and the scroll position is lost</li>
+	</ol>
+	<h2 className="mt-6 text-xl font-bold">The result was something like below.</h2>
+	<div className="mt-6 overflow-x-scroll w-[20rem] lg:w-full">
+		<code>
+		```js wrap title="FullScreenImageOnExpand.tsx" showLineNumbers
+		export const FullScreenImage: React.FC = () => {
+		  const [expandImage, setExpandImage] = useState(false);
+
+		  return (
+		    <>
+		      <div
+		        className={`group z-[12] transition-all ease-in-out duration-500 hover:cursor-pointer ${expandImage ? "scale-125 fixed flex origin-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" : "mt-6 relative"}`}
+		        onClick={() => {
+		          if (window.screen.width >= 1024) {
+		            setExpandImage(!expandImage);
+		          }
+		        }}
+		      >
+		        <img
+		          id="jang-falls-image"
+		          src={JangFalls}
+		          alt="Image of Jang Falls Tawang District"
+		          className={`rounded-xl mx-auto w-fit h-auto peer`}
+		        />
+		        <div className="absolute top-0 w-full h-full lg:group-hover:flex text-black bg-opacity-50 hidden">
+		          <p className="m-auto font-bold">
+		            Click to {expandImage ? "collapse" : "expand"}
+		          </p>
+		        </div>
+		      </div>
+		      <div
+		        className={`${
+		          expandImage
+		            ? "fixed left-0 top-0 z-[11] h-screen w-screen backdrop-blur-sm"
+		            : "hidden"
+		        }`}
+		      ></div>
+		    </>
+		  );
+		};
+		```
+		</code>
+	</div>
+	<p className="mt-6">There's one problem with the above. You can still scroll behind the image. Making the body fixed resolves this.</p>
+	<div className="mt-6 w-[20rem] lg:w-full">
+		```js startLineNumber=3 ins={1-11} wrap title="FullScreenImageOnExpand.tsx"
+			 useEffect(() => {
+			   if (expandImage) {
+			     document.body.classList.add("overflow-hidden");
+			   } else {
+			     document.body.classList.remove("overflow-hidden");
+			   }
+
+			   return () => {
+			     document.body.classList.remove("overflow-hidden");
+			   };
+			 }, [expandImage]);
+		```
+	</div>
+	<h3 className="text-xl mt-6 font-bold">Here's the final result:</h3>
+	<FullScreenImage client:load />
+
+</section>

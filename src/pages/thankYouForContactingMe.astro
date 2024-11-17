@@ -1,0 +1,21 @@
+---
+import Navigation from "../components/Navigation.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact">
+  <section class="flex flex-col h-full w-full lg:px-[10rem]">
+    <header class="flex flex-col w-full h-16">
+      <Navigation activeNavItem="contact" />
+    </header>
+    <div
+      class="flex flex-col lg:flex-row w-full h-full justify-between items-center p-4 lg:px-12 py-16"
+    >
+      <h1
+        class="text-3xl lg:text-5xl font-rubikScribble text-teaGreen mx-auto font-bold lg:w-3/4 text-center"
+      >
+        Thank you for contacting me! I'll be in touch!
+      </h1>
+    </div>
+  </section>
+</Layout>

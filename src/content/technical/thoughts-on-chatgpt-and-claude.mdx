@@ -1,0 +1,67 @@
+---
+title: "On using Claude"
+description: "Some thoughts I've had using Claude"
+tags: ["future", "terminal"]
+date: 22nd October 2024
+---
+<section className="flex flex-col gap-2">
+	<p>
+		I have been using Claude for the past couple of months and ChatGPT for a few months before that. Both
+		are obviously very good tools but I'd rank Claude as better than ChatGPT. My first few weeks of using these tools felt like magic. It felt like
+		they could respond to anything. The next couple of weeks I'd get frustrated with them, trying to test their limits. I'd become so lazy that
+		I completely stopped using my brain. Even when I had enough to code up whatever I was doing myself, I'd become so accustomed to asking them for answers
+		that I'd hurl abuses at them (lol) and tell them they were wrong in frustration. It took some time, but once you use these tools for a bit, you can
+		gauge whether you're going to get an answer or not. After that point, there's no use in trying to get an answer from them (<i>and to use your brain instead</i>)
+		because they are going to go around in circles and you are going to waste your time.
+	</p>
+	<p>
+		I've found Claude extremely useful for CSS, Webpack, TSConfig related questions. For example, I was recently
+		stuck on loading an `ESM` file of a library for a specific microfrontend in a Single Spa React Setup. If I placed it in the `index.ejs` section of `app-root`,
+		it would get loaded for all the microfrontends. I wanted to load the `ESM` file only for the specific microfrontend that used it. And after a bit of
+		prompting it gave me the answer.
+		<pre className="mt-4 flex flex-col gap-2">
+			<p>
+				```js title="root-component.tsx"
+				import('path/to/esm/file')
+			    .then((library) => {
+			        window['library'] = library;
+			    })
+			    .catch((error) => {
+			        console.error('Error loading ESM file:', error);
+			    });
+			```
+			</p>
+			<p>
+			```js title="webpack.config.js"
+				...
+				alias: {
+	                library: path.resolve(__dirname, 'path/to/esm/file'),
+	            },
+				...
+			```
+			</p>
+		</pre>
+	</p>
+	<p>
+		There were several other `TSConfig` related questions where it saved me a lot of time in figuring out the correct option to use. I also found it
+		extremely useful when I had to write a Jira Plugin for work (it was hard to find the relevant information for the specific version I was using online).
+	</p>
+	<p>
+		But recently I've been doing a lot of `Reactive` programming in `Quarkus`, and it's been a disappointment. Maybe my own limited understanding during my
+		initial days of reactive programming added to me not being able to articulate myself better to these chat tools. But it brought me to the conclusion that it's much better
+		to stay away from Claude/ChatGPT and their ilk in the beginner stages of learning something. Only once you've gained some sort of fluency with the
+		new tool you're learning and can't find anything in the documentation, it's better to resort to using Claude/ChatGPT.
+	</p>
+	<p>
+		I don't pay for any of these tools, and having a limit on the number of questions that I can ask Claude has been a blessing in that I don't resort
+		to using it for every small issue that I get stuck on. There were times when, in the amount of time I spent trying to correctly prompt ChatGPT into
+		answering my question, I could've solved it myself.
+	</p>
+	<div className="flex flex-col gap-1 mt-2">
+		<h2 className="text-xl font-bold">Conclusion</h2>
+		<p>
+			Claude/ChatGPT and their ilk are extremely useful when used in moderation. But if you're learning a new tool/framework/language, it's best to
+			stay away from them. Using them in the initial stages of learning is just going to make you dumb.
+		</p>
+	</div>
+</section>

@@ -1,0 +1,84 @@
+---
+import {
+  BlueSkyLogo,
+  GithubLogo,
+  GmailLogo,
+  LinkedinLogo,
+} from "@/components/Icons";
+import Navigation from "../components/Navigation.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact">
+  <section class="flex flex-col h-full w-full lg:px-[10rem]">
+    <header class="flex flex-col w-full h-16">
+      <Navigation activeNavItem="contact" />
+    </header>
+    <div
+      class="flex flex-col lg:flex-row w-full h-full justify-between items-center p-4 lg:px-12 py-16"
+    >
+      <div
+        class="flex gap-4 flex-col font-montserrat text-yellow-200 p-4 lg:p-0 lg:w-1/3"
+      >
+        <h2 class="my-auto text-2xl lg:text-left lg:text-5xl font-bold">
+          Contact me
+        </h2>
+        <div class="text-sm lg:text-base">
+          <p>
+            <ul class="list-disc flex flex-col gap-1 w-3/4">
+              <li>Available for freelance remote work.</li>
+              <li>Open to moving countries, if you sponsor visas :)</li>
+              <li>
+                View my <a href="/resume.pdf" class="text-teaGreen font-bold"
+                  >resume</a
+                > for more details on what I offer!
+              </li>
+            </ul>
+          </p>
+        </div>
+        <div class="flex flex-row gap-4 text-lg">
+          <a
+            href="https://bsky.app/profile/shreyast.bsky.social"
+            target="_blank"
+          >
+            <BlueSkyLogo className="w-6 h-auto" /></a
+          >
+          <a href="https://github.com/shreyas1599"
+            ><GithubLogo className="w-6 h-auto" /></a
+          >
+          <a href="mailto:shreyasthirumalai@gmail.com" target="_blank"
+            ><GmailLogo className="w-6 h-auto" /></a
+          >
+          <a
+            href="https://www.linkedin.com/in/shreyas-thirumalai-bb142315a/"
+            target="_blank"><LinkedinLogo className="w-6 h-auto" /></a
+          >
+        </div>
+      </div>
+      <form
+        method="POST"
+        action="/api/contact"
+        class="flex flex-col w-full lg:w-1/2 p-4 lg:p-0 gap-6 place-content-center h-full m-auto pb-10"
+      >
+        <input
+          type="email"
+          required
+          name="email"
+          placeholder="Enter your email"
+          class="bg-teaGreen rounded-lg h-10 p-4 focus:outline-primaryDark placeholder-primaryGreenDark text-primaryDark"
+        />
+        <textarea
+          name="message"
+          required
+          class="bg-teaGreen rounded-lg p-4 placeholder-primaryDark focus:outline-primaryDark text-primaryDark rows h-56 lg:h-full"
+          rows="20"
+          placeholder="Enter a message..."></textarea>
+        <button
+          type="submit"
+          class="bg-teaGreen w-fit px-4 text-primaryDark font-semibold hover:bg-opacity-50 p-1 rounded-xl text-lg"
+          >Submit</button
+        >
+      </form>
+    </div>
+  </section>
+</Layout>

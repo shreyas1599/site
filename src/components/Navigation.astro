@@ -1,0 +1,33 @@
+---
+interface Props {
+  activeNavItem: "home" | "blog" | "resume" | "contact";
+}
+
+const { activeNavItem } = Astro.props;
+---
+
+<nav
+  class="flex mx-auto fixed z-10 backdrop-blur-xl w-fit flex-row text-white font-kodeMono rounded-full lg:text-xl self-center top-5 justify-center"
+>
+  <div
+    class="flex flex-row justify-between text-xs lg:text-base lg:bg-transparent backdrop-blur-xl lg:gap-10 rounded-full top-4"
+  >
+    {/** TODO: pushable button */}
+    <a
+      class={`hover:cursor-pointer p-2 px-4 font-bold rounded-full ${activeNavItem === "home" ? "bg-teaGreen text-primaryDark" : "hover:bg-teaGreen hover:text-primaryDark"}  hover:rounded-full`}
+      href="/">Home</a
+    >
+    <a
+      class={`hover:cursor-pointer p-2 px-4 font-bold rounded-full ${activeNavItem === "blog" ? "bg-teaGreen text-primaryDark" : "hover:bg-teaGreen hover:text-primaryDark"}  hover:rounded-full`}
+      href="/posts">Blog</a
+    >
+    <a
+      class={`hover:cursor-pointer p-2 px-4 font-bold rounded-full ${activeNavItem === "resume" ? "bg-teaGreen text-primaryDark" : "hover:bg-teaGreen hover:text-primaryDark"}  hover:rounded-full`}
+      href="/resume.pdf">Resume</a
+    >
+    <a
+      class={`hover:cursor-pointer p-2 px-4 font-bold rounded-full ${activeNavItem === "contact" ? "bg-teaGreen text-primaryDark" : "hover:bg-teaGreen hover:text-primaryDark"}  hover:rounded-full`}
+      href="/contact">Contact</a
+    >
+  </div>
+</nav>

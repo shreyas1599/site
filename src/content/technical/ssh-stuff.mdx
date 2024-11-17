@@ -1,0 +1,88 @@
+---
+title: "EC2 Stuff"
+description: "Documenting stuff for my future self"
+tags: ["future", "terminal"]
+date: 22nd October 2024
+---
+<section>
+	I've used very basic stuff while dealing with EC2. I'm documenting this as and when I figure out new stuff so that it's easier for future me to find stuff that I would need.
+</section>
+<section className="mt-6">
+	<h2 className="text-xl font-bold">SSH</h2>
+	<ol className="list-disc p-4">
+		<li>
+			<h3 className="text-md font-semibold">Setting up aliases</h3>
+			<p className="mt-2">Create a config file under `~/.ssh` (<i>tab on second line is important</i>)</p>
+			<p className="mt-4">
+			```bash title="~/.ssh/config"
+			Host myHost
+		        HostName MyHostName
+		        User ec2-user
+		        IdentityFile ~/.ssh/identity.pem
+			```
+			</p>
+		</li>
+	</ol>
+</section>
+<section className="mt-6">
+	<h2 className="text-xl font-bold">tmux</h2>
+	<ol className="list-disc p-4 flex flex-col gap-4">
+		<li>
+			<h3 className="text-md font-semibold">Start session</h3>
+			<p className="mt-4">
+				```bash showLineNumbers=false
+					tmux
+				```
+			</p>
+		</li>
+		<li>
+			<h3 className="text-md font-semibold">Detach from session</h3>
+			<p className="mt-4">
+				`Ctrl-b` + `D`
+			</p>
+		</li>
+		<li>
+			<h3 className="text-md font-semibold">Attach to session</h3>
+			<p className="mt-4">
+				```bash showLineNumbers=false
+					tmux ls
+					tmux attach -t 0
+				```
+			</p>
+		</li>
+		<li>
+			<h3 className="text-md font-semibold">Delete session</h3>
+			<p className="mt-4">
+				```bash showLineNumbers=false
+					tmux kill-session -t 0
+				```
+			</p>
+		</li>
+	</ol>
+</section>
+<section className="mt-6">
+	<h2 className="text-xl font-bold">Node</h2>
+	<ol className="list-disc mt-2">
+		<li>
+			<h3 className="text-md font-semibold">Basics</h3>
+			<p className="mt-4">
+				```bash showLineNumbers=false
+					nvm use 16.15.1 // or install other versions and use
+				```
+			</p>
+		</li>
+	</ol>
+</section>
+<section className="mt-6">
+	<h2 className="text-xl font-bold">Docker</h2>
+	<ol className="list-disc mt-2">
+	<li>
+		<p className="mt-2">Start services. Best to use docker for everything on ec2</p>
+		<p className="mt-4">
+			```bash showLineNumbers=false
+				sudo systemctl start docker // run before doing anything docker related
+			```
+		</p>
+	</li>
+	</ol>
+</section>

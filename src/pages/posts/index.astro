@@ -1,0 +1,97 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.astro";
+const techPosts = await getCollection("technical");
+const personalPosts = await getCollection("personal");
+---
+
+<Layout title={"Blog"}>
+  <Navigation activeNavItem="blog" />
+  <section id="technical" class="mt-20 h-full p-2">
+    <div
+      class="flex flex-col lg:flex-row gap-4 h-full lg:px-[4rem] p-4 3xl:h-[30vh] min-h-[45vh] 2xl:min-h-[20vh]"
+    >
+      <div
+        class="text-white my-auto lg:h-[20rem] lg:min-w-[15rem] from-teaGreen to-lightGreen bg-gradient-to-r p-1 rounded-lg font-kodeMono"
+      >
+        <h2
+          class="bg-primaryGreenDark text-primaryDark font-bold w-full h-full rounded-lg place-content-center lg:text-left text-center lg:text-3xl p-2 lg:flex lg:flex-col lg:pl-10"
+        >
+          <span>Technical</span>
+          <span>Stuff</span>
+        </h2>
+      </div>
+      <div class="flex flex-row overflow-x-scroll relative w-full py-6">
+        {
+          techPosts.map((post, index) => {
+            return (
+              <a
+                href={"/posts/tech/" + post.slug}
+                class={`${index !== 0 ? "-ml-[5rem]" : "ml-5"} hover:cursor-pointer hover:mr-[6rem] flex flex-col overflow-hidden h-full z-10 min-h-[20rem] bg-teaGreen p-4 text-primaryDark min-w-[20rem] w-[20rem] shadow-article hover:rotate-6 rounded-lg transition-all duration-300`}
+              >
+                <div class="text-xl w-2/3 lg:w-full font-bold">
+                  {post.data.title}
+                </div>
+                <div class="flex flex-row gap-2 pt-1">
+                  {post.data.tags?.map((tag: string) => (
+                    <span class="bg-blue-500 rounded-lg font-bold px-2 text-sm">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div class="pt-4 w-2/3 font-semibold text-lg">
+                  {post.data.description}
+                </div>
+                <div class="italic">{post.data.date}</div>
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+  <section id="other" class="h-full w-full bg-primaryGreenDark lg:min-h-[50vh]">
+    <div
+      class="flex flex-col lg:flex-row h-full p-2 gap-4 pt-8 lg:px-[4rem] 3xl:h-[30vh] min-h-[45vh] 2xl:min-h-[20vh]"
+    >
+      <div
+        class="text-white my-auto lg:h-[20rem] lg:min-w-[15rem] from-lightGreen to-pink-500 bg-gradient-to-r p-1 rounded-lg"
+      >
+        <h2
+          class="bg-primaryDark text-center lg:text-left w-full h-full font-bold text-primaryGreenDark rounded-lg place-content-center lg:text-3xl p-2 lg:flex lg:flex-col pl-10 font-kodeMono"
+        >
+          <span>Personal</span>
+          <span>Stuff</span>
+        </h2>
+      </div>
+      <div class="flex flex-row overflow-x-scroll relative w-full py-6">
+        {
+          personalPosts.map((post, index) => {
+            return (
+              <a
+                href={"/posts/personal/" + post.slug}
+                class={`${index !== 0 ? "-ml-[5rem]" : "ml-5"} flex flex-col hover:cursor-pointer hover:mr-[6rem] overflow-hidden z-10 bg-lightGreen p-4 text-primaryDark min-h-[20rem] min-w-[20rem] w-[20rem] shadow-article hover:rotate-6 rounded-lg transition-all duration-300`}
+              >
+                <div class="text-sm italic">{post.data.date}</div>
+                <div class="text-xl w-2/3 lg:w-full font-bold">
+                  {post.data.title}
+                </div>
+                <div class="flex flex-row gap-2 pt-1">
+                  {post.data.tags?.map((tag: string) => (
+                    <span class="bg-blue-500 font-bold rounded-lg px-2 text-sm">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div class="pt-4 w-2/3 font-semibold text-lg">
+                  {post.data.description}
+                </div>
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+</Layout>
