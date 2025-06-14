@@ -19,7 +19,7 @@ date: 22nd October 2024
 		stuck on loading an `ESM` file of a library for a specific microfrontend in a Single Spa React Setup. If I placed it in the `index.ejs` section of `app-root`,
 		it would get loaded for all the microfrontends. I wanted to load the `ESM` file only for the specific microfrontend that used it. And after a bit of
 		prompting it gave me the answer.
-		<pre className="mt-4 flex flex-col gap-2">
+		<pre className="mt-4 flex flex-col gap-2 w-[20rem] lg:w-full">
 			<p>
 				```js title="root-component.tsx"
 				import('path/to/esm/file')

@@ -1,97 +1,188 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
+import Layout from "../../layouts/Layout.astro";
 const techPosts = await getCollection("technical");
 const personalPosts = await getCollection("personal");
 ---
 
 <Layout title={"Blog"}>
   <Navigation activeNavItem="blog" />
-  <section id="technical" class="mt-20 h-full p-2">
-    <div
-      class="flex flex-col lg:flex-row gap-4 h-full lg:px-[4rem] p-4 3xl:h-[30vh] min-h-[45vh] 2xl:min-h-[20vh]"
-    >
-      <div
-        class="text-white my-auto lg:h-[20rem] lg:min-w-[15rem] from-teaGreen to-lightGreen bg-gradient-to-r p-1 rounded-lg font-kodeMono"
-      >
-        <h2
-          class="bg-primaryGreenDark text-primaryDark font-bold w-full h-full rounded-lg place-content-center lg:text-left text-center lg:text-3xl p-2 lg:flex lg:flex-col lg:pl-10"
-        >
-          <span>Technical</span>
-          <span>Stuff</span>
-        </h2>
+
+  <div class="min-h-screen bg-primaryDark px-4 lg:px-16 py-20">
+    <header class="mb-16 text-center">
+      <h1 class="text-4xl lg:text-6xl font-lobster text-lightGreen mb-4">
+        My Writings
+      </h1>
+      <p class="text-teaGreen/80 font-kodeMono max-w-2xl mx-auto">
+        A collection of thoughts, tutorials, and random musings — some
+        technical, some personal.
+      </p>
+    </header>
+
+    <section id="technical" class="mb-24">
+      <div class="flex items-center mb-8">
+        <div class="h-px flex-grow bg-teaGreen/20"></div>
+        <h2 class="text-2xl font-kodeMono text-teaGreen px-4">Technical</h2>
+        <div class="h-px flex-grow bg-teaGreen/20"></div>
       </div>
-      <div class="flex flex-row overflow-x-scroll relative w-full py-6">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {
-          techPosts.map((post, index) => {
-            return (
-              <a
-                href={"/posts/tech/" + post.slug}
-                class={`${index !== 0 ? "-ml-[5rem]" : "ml-5"} hover:cursor-pointer hover:mr-[6rem] flex flex-col overflow-hidden h-full z-10 min-h-[20rem] bg-teaGreen p-4 text-primaryDark min-w-[20rem] w-[20rem] shadow-article hover:rotate-6 rounded-lg transition-all duration-300`}
-              >
-                <div class="text-xl w-2/3 lg:w-full font-bold">
-                  {post.data.title}
-                </div>
-                <div class="flex flex-row gap-2 pt-1">
+          techPosts.map((post) => (
+            <a
+              href={`/posts/tech/${post.slug}`}
+              class="group bg-primaryGreenDark/30 backdrop-blur-sm border border-teaGreen/10 rounded-xl p-6 hover:border-teaGreen/30 transition-all duration-300 flex flex-col h-full"
+            >
+              <div class="flex justify-between items-start mb-4">
+                <div class="flex flex-wrap gap-2">
                   {post.data.tags?.map((tag: string) => (
-                    <span class="bg-blue-500 rounded-lg font-bold px-2 text-sm">
-                      {tag}
+                    <span class="bg-teaGreen/20 text-teaGreen rounded-full px-3 py-1 text-xs font-kodeMono">
+                      #{tag}
                     </span>
                   ))}
                 </div>
-                <div class="pt-4 w-2/3 font-semibold text-lg">
-                  {post.data.description}
-                </div>
-                <div class="italic">{post.data.date}</div>
-              </a>
-            );
-          })
+                <span class="text-lightGreen/60 text-sm font-kodeMono">
+                  {post.data.date}
+                </span>
+              </div>
+
+              <h3 class="text-xl font-bold text-lightGreen mb-3 group-hover:text-teaGreen transition-colors duration-300">
+                {post.data.title}
+              </h3>
+
+              <p class="text-lightGreen/80 text-sm mb-4 flex-grow">
+                {post.data.description}
+              </p>
+
+              <div class="mt-auto">
+                <span class="inline-flex items-center text-teaGreen font-kodeMono text-sm group-hover:translate-x-1 transition-transform duration-300">
+                  Read article
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 ml-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))
         }
       </div>
-    </div>
-  </section>
-  <section id="other" class="h-full w-full bg-primaryGreenDark lg:min-h-[50vh]">
-    <div
-      class="flex flex-col lg:flex-row h-full p-2 gap-4 pt-8 lg:px-[4rem] 3xl:h-[30vh] min-h-[45vh] 2xl:min-h-[20vh]"
-    >
-      <div
-        class="text-white my-auto lg:h-[20rem] lg:min-w-[15rem] from-lightGreen to-pink-500 bg-gradient-to-r p-1 rounded-lg"
-      >
-        <h2
-          class="bg-primaryDark text-center lg:text-left w-full h-full font-bold text-primaryGreenDark rounded-lg place-content-center lg:text-3xl p-2 lg:flex lg:flex-col pl-10 font-kodeMono"
-        >
-          <span>Personal</span>
-          <span>Stuff</span>
-        </h2>
+    </section>
+
+    <section id="personal">
+      <div class="flex items-center mb-8">
+        <div class="h-px flex-grow bg-lightGreen/20"></div>
+        <h2 class="text-2xl font-kodeMono text-lightGreen px-4">Personal</h2>
+        <div class="h-px flex-grow bg-lightGreen/20"></div>
       </div>
-      <div class="flex flex-row overflow-x-scroll relative w-full py-6">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {
-          personalPosts.map((post, index) => {
-            return (
-              <a
-                href={"/posts/personal/" + post.slug}
-                class={`${index !== 0 ? "-ml-[5rem]" : "ml-5"} flex flex-col hover:cursor-pointer hover:mr-[6rem] overflow-hidden z-10 bg-lightGreen p-4 text-primaryDark min-h-[20rem] min-w-[20rem] w-[20rem] shadow-article hover:rotate-6 rounded-lg transition-all duration-300`}
-              >
-                <div class="text-sm italic">{post.data.date}</div>
-                <div class="text-xl w-2/3 lg:w-full font-bold">
-                  {post.data.title}
-                </div>
-                <div class="flex flex-row gap-2 pt-1">
+          personalPosts.map((post) => (
+            <a
+              href={`/posts/personal/${post.slug}`}
+              class="group bg-primaryDark/50 backdrop-blur-sm border border-lightGreen/10 rounded-xl p-6 hover:border-lightGreen/30 transition-all duration-300 flex flex-col h-full"
+            >
+              <div class="flex justify-between items-start mb-4">
+                <div class="flex flex-wrap gap-2">
                   {post.data.tags?.map((tag: string) => (
-                    <span class="bg-blue-500 font-bold rounded-lg px-2 text-sm">
-                      {tag}
+                    <span class="bg-lightGreen/20 text-lightGreen rounded-full px-3 py-1 text-xs font-kodeMono">
+                      #{tag}
                     </span>
                   ))}
                 </div>
-                <div class="pt-4 w-2/3 font-semibold text-lg">
-                  {post.data.description}
-                </div>
-              </a>
-            );
-          })
+                <span class="text-teaGreen/60 text-sm font-kodeMono">
+                  {post.data.date}
+                </span>
+              </div>
+
+              <h3 class="text-xl font-bold text-teaGreen mb-3 group-hover:text-lightGreen transition-colors duration-300">
+                {post.data.title}
+              </h3>
+
+              <p class="text-teaGreen/80 text-sm mb-4 flex-grow">
+                {post.data.description}
+              </p>
+
+              <div class="mt-auto">
+                <span class="inline-flex items-center text-lightGreen font-kodeMono text-sm group-hover:translate-x-1 transition-transform duration-300">
+                  Read article
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 ml-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))
         }
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </Layout>
+
+<style>
+  /* Add a subtle hover effect to cards */
+  a.group {
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  a.group:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  a.group::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      45deg,
+      rgba(174, 247, 142, 0.1) 0%,
+      rgba(0, 0, 0, 0) 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  a.group:hover::before {
+    opacity: 1;
+  }
+
+  /* Ensure content is above the gradient */
+  a.group > * {
+    position: relative;
+    z-index: 1;
+  }
+</style>

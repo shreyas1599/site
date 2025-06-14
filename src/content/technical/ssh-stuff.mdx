@@ -9,7 +9,7 @@ date: 22nd October 2024
 </section>
 <section className="mt-6">
 	<h2 className="text-xl font-bold">SSH</h2>
-	<ol className="list-disc p-4">
+	<ol className="list-disc p-4 w-[20rem] lg:w-full">
 		<li>
 			<h3 className="text-md font-semibold">Setting up aliases</h3>
 			<p className="mt-2">Create a config file under `~/.ssh` (<i>tab on second line is important</i>)</p>
@@ -26,10 +26,10 @@ date: 22nd October 2024
 </section>
 <section className="mt-6">
 	<h2 className="text-xl font-bold">tmux</h2>
-	<ol className="list-disc p-4 flex flex-col gap-4">
+	<ol className="list-disc p-4 flex flex-col gap-4 mt-4 w-[20rem] lg:w-full">
 		<li>
 			<h3 className="text-md font-semibold">Start session</h3>
-			<p className="mt-4">
+			<p className="mt-2">
 				```bash showLineNumbers=false
 					tmux
 				```
@@ -43,7 +43,7 @@ date: 22nd October 2024
 		</li>
 		<li>
 			<h3 className="text-md font-semibold">Attach to session</h3>
-			<p className="mt-4">
+			<p className="mt-4 w-[20rem] lg:w-full">
 				```bash showLineNumbers=false
 					tmux ls
 					tmux attach -t 0
@@ -52,7 +52,7 @@ date: 22nd October 2024
 		</li>
 		<li>
 			<h3 className="text-md font-semibold">Delete session</h3>
-			<p className="mt-4">
+			<p className="mt-4 w-[20rem] lg:w-full">
 				```bash showLineNumbers=false
 					tmux kill-session -t 0
 				```
@@ -62,10 +62,10 @@ date: 22nd October 2024
 </section>
 <section className="mt-6">
 	<h2 className="text-xl font-bold">Node</h2>
-	<ol className="list-disc mt-2">
+	<ol className="list-disc mt-2 mt-4 w-[20rem] lg:w-full">
 		<li>
 			<h3 className="text-md font-semibold">Basics</h3>
-			<p className="mt-4">
+			<p className="mt-2">
 				```bash showLineNumbers=false
 					nvm use 16.15.1 // or install other versions and use
 				```
@@ -75,10 +75,10 @@ date: 22nd October 2024
 </section>
 <section className="mt-6">
 	<h2 className="text-xl font-bold">Docker</h2>
-	<ol className="list-disc mt-2">
+	<ol className="list-disc mt-4 w-[20rem] lg:w-full">
 	<li>
 		<p className="mt-2">Start services. Best to use docker for everything on ec2</p>
-		<p className="mt-4">
+		<p className="mt-2">
 			```bash showLineNumbers=false
 				sudo systemctl start docker // run before doing anything docker related
 			```
