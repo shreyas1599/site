@@ -1,6 +1,8 @@
 ---
 import Navigation from "../components/Navigation.astro";
 import Layout from "../layouts/Layout.astro";
+import AnimatedHero from "../components/AnimatedHero";
+import AnimatedExperience from "../components/AnimatedExperience";
 ---
 
 <Layout title="Shreyas Thirumalai">
@@ -9,257 +11,41 @@ import Layout from "../layouts/Layout.astro";
     class="flex flex-col justify-center w-full min-h-screen bg-primaryDark lg:px-20 px-10 relative overflow-hidden"
   >
     <div
-      class="absolute w-64 h-64 bg-primaryGreenDark opacity-10 rounded-full -top-20 -left-20 blur-3xl"
+      class="blob-1 absolute w-64 h-64 bg-primaryGreenDark opacity-10 rounded-full -top-20 -left-20 blur-3xl"
     >
     </div>
     <div
-      class="absolute w-96 h-96 bg-lightGreen opacity-5 rounded-full -bottom-40 -right-20 blur-3xl"
+      class="blob-2 absolute w-96 h-96 bg-lightGreen opacity-5 rounded-full -bottom-40 -right-20 blur-3xl"
     >
     </div>
 
-    <div class="flex flex-col lg:w-3/4 mx-auto text-center z-10">
-      <div class="flex flex-col w-full">
-        <h1
-          class="text-primaryTextDark font-lobster font-extrabold text-3xl lg:text-7xl pt-10 animate-fadeIn"
-        >
-          Hi, I'm Shreyas Thirumalai
-        </h1>
-        <h1
-          class="text-primaryTextDark font-lobster font-extrabold text-2xl lg:text-6xl mt-4"
-        >
-          A Full Stack Developer
-        </h1>
-      </div>
-      <p
-        class="text-lightGreen font-kodeMono pt-6 lg:pt-10 leading-7 lg:text-xl text-sm max-w-2xl mx-auto"
-      >
-        I write code for a living. Started doing it for the <span
-          class="text-red-500 font-bold border-b-4 border-lightGreen hover:border-red-500 transition-all"
-          >$$$</span
-        > and continuing to do it for the <span
-          class="border-b-4 border-red-500 hover:border-lightGreen transition-all"
-          >interest</span
-        >.
-      </p>
-      <div class="mt-10">
-        <a
-          href="/posts"
-          class="bg-lightGreen text-primaryDark font-kodeMono font-bold px-6 py-3 rounded-full hover:bg-teaGreen transition-all duration-300 inline-block"
-          >View My Work</a
-        >
-      </div>
-    </div>
-    <div
-      class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-10 w-10 text-lightGreen"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-      </svg>
-    </div>
+    <AnimatedHero client:load />
   </header>
 
-  <div
-    class="flex flex-col 3xl:px-[25vw] lg:flex-row w-full py-20 bg-primaryGreenDark items-center px-10 gap-10 relative"
-  >
-    <h2
-      class="text-4xl font-lobster text-primaryDark text-center w-full mb-10 lg:mb-0 lg:absolute lg:top-10 lg:left-0 lg:right-0"
-    >
-      Experience
-    </h2>
-
-    <div
-      class="2xl:w-2/5 lg:w-2/5 flex mt-16 lg:mt-0 w-full h-full flex-col lg:min-h-[28rem] bg-teaGreen rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 ease-in-out border-2 border-primaryDark/10"
-    >
-      <div class="flex flex-row justify-between items-center mb-4">
-        <span
-          class="bg-primaryDark text-teaGreen px-3 py-1 rounded-full text-xs font-kodeMono tracking-wider"
-        >
-          SENIOR SOFTWARE ENGINEER
-        </span>
-        <span class="text-primaryDark/70 italic text-xs font-kodeMono">
-          2023 - present
-        </span>
-      </div>
-
-      <h3 class="font-kodeMono font-extrabold text-2xl text-primaryDark mb-2">
-        Glide Systems
-      </h3>
-
-      <p
-        class="font-montserrat text-primaryDark/90 text-sm lg:text-base leading-relaxed"
-      >
-        Working on Product Lifecycle Management Software. Wrote the entire stack
-        for a PoC Bill-of-Material (BOM) Management Solution that uses the
-        polymorphic database TypeDB. Wrote a Jira Plugin and contributing to a
-        Neo4J-based Product Data Management Platform. Also redesigned the <a
-          class="border-b-2 hover:cursor-pointer border-red-500 font-bold hover:border-lightGreen transition-all"
-          href="https://www.glidesystemsinc.com"
-          target="_blank">landing page</a
-        >.
-      </p>
-
-      <div class="mt-auto pt-6">
-        <h4 class="text-primaryDark/70 text-xs font-kodeMono mb-2">
-          TECHNOLOGIES
-        </h4>
-        <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-lightGreen/50 text-primaryDark rounded-md text-center p-1 px-3 text-xs font-bold"
-            >TypeDB</span
-          >
-          <span
-            class="bg-lightGreen/50 text-primaryDark rounded-md text-center p-1 px-3 text-xs font-bold"
-            >Neo4J</span
-          >
-          <span
-            class="bg-lightGreen/50 text-primaryDark rounded-md text-center p-1 px-3 text-xs font-bold"
-            >Quarkus</span
-          >
-          <span
-            class="bg-lightGreen/50 text-primaryDark rounded-md text-center p-1 px-3 text-xs font-bold"
-            >SpringBoot</span
-          >
-          <span
-            class="bg-lightGreen/50 text-primaryDark rounded-md text-center p-1 px-3 text-xs font-bold"
-            >SingleSpa</span
-          >
-        </div>
-      </div>
-    </div>
-    <div
-      class="lg:w-3/5 w-full h-full lg:min-h-[28rem] flex flex-col lg:flex-row shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out"
-    >
-      <div
-        class="lg:w-3/5 bg-lightGreen rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none p-8 flex flex-col border-2 border-primaryDark/10"
-      >
-        <div class="flex flex-row justify-between items-center mb-4">
-          <span
-            class="bg-primaryDark text-lightGreen px-3 py-1 rounded-full text-xs font-kodeMono tracking-wider"
-          >
-            SOFTWARE ANALYST
-          </span>
-          <span class="text-primaryDark/70 italic text-xs font-kodeMono">
-            2021 - 2023
-          </span>
-        </div>
-
-        <h3 class="font-kodeMono font-extrabold text-2xl text-primaryDark mb-2">
-          Goldman Sachs
-        </h3>
-
-        <p
-          class="font-montserrat text-primaryDark/90 text-sm lg:text-base leading-relaxed"
-        >
-          Worked on the inventory management platform that handled financial
-          instrument movements across the firm. Authored several ETL pipelines,
-          one of which netted cost savings of <span class="font-bold"
-            >$2.5M</span
-          >. Also wrote several dashboards in React and improved underlying
-          architecture of the blue-green deployment.
-        </p>
-
-        <div class="mt-auto pt-6">
-          <h4 class="text-primaryDark/70 text-xs font-kodeMono mb-2">
-            TECHNOLOGIES
-          </h4>
-          <div class="flex flex-wrap gap-2">
-            <span
-              class="bg-teaGreen/70 text-primaryDark rounded-md text-center p-1 px-3 text-xs font-bold"
-              >Kafka</span
-            >
-            <span
-              class="bg-teaGreen/70 text-primaryDark rounded-md text-center p-1 px-3 text-xs font-bold"
-              >React</span
-            >
-            <span
-              class="bg-teaGreen/70 text-primaryDark rounded-md text-center p-1 px-3 text-xs font-bold"
-              >SpringBoot</span
-            >
-            <span
-              class="bg-teaGreen/70 text-primaryDark rounded-md text-center p-1 px-3 text-xs font-bold"
-              >K8s</span
-            >
-            <span
-              class="bg-teaGreen/70 text-primaryDark rounded-md text-center p-1 px-3 text-xs font-bold"
-              >Fitnesse</span
-            >
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="lg:w-2/5 bg-lightGreen/90 rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none p-8 flex flex-col border-t-2 lg:border-t-0 lg:border-l-2 border-primaryDark/10"
-      >
-        <div class="flex flex-row justify-between items-center mb-4">
-          <span
-            class="bg-primaryDark text-lightGreen px-3 py-1 rounded-full text-xs font-kodeMono tracking-wider"
-          >
-            SUMMER ANALYST
-          </span>
-          <span class="text-primaryDark/70 italic text-xs font-kodeMono">
-            Summer 2020
-          </span>
-        </div>
-
-        <h3 class="font-kodeMono font-extrabold text-2xl text-primaryDark mb-2">
-          Goldman Sachs
-        </h3>
-
-        <p
-          class="font-montserrat text-primaryDark/90 text-sm lg:text-base leading-relaxed"
-        >
-          Wrote an interactive network diagram for an inventory management
-          optimization platform to visualize movements across nodes within a
-          graph using D3 and GraphQL.
-        </p>
-
-        <div class="mt-auto pt-6">
-          <h4 class="text-primaryDark/70 text-xs font-kodeMono mb-2">
-            TECHNOLOGIES
-          </h4>
-          <div class="flex flex-wrap gap-2">
-            <span
-              class="bg-teaGreen/70 text-primaryDark rounded-md text-center p-1 px-3 text-xs font-bold"
-              >D3.js</span
-            >
-            <span
-              class="bg-teaGreen/70 text-primaryDark rounded-md text-center p-1 px-3 text-xs font-bold"
-              >React</span
-            >
-            <span
-              class="bg-teaGreen/70 text-primaryDark rounded-md text-center p-1 px-3 text-xs font-bold"
-              >GraphQL</span
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <style>
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-fadeIn {
-      animation: fadeIn 1s ease-out;
-    }
-  </style>
+  <AnimatedExperience client:visible />
 </Layout>
+
+<script>
+  // Using modern browser APIs for animations
+  document.addEventListener("DOMContentLoaded", () => {
+    // Animate background blobs
+    const blobs = document.querySelectorAll(".blob-1, .blob-2");
+
+    blobs.forEach((blob, index) => {
+      // Create a keyframe animation
+      blob.animate(
+        [
+          { transform: "scale(1)", opacity: index === 0 ? "0.1" : "0.05" },
+          { transform: "scale(1.1)", opacity: index === 0 ? "0.15" : "0.08" },
+          { transform: "scale(1)", opacity: index === 0 ? "0.1" : "0.05" },
+        ],
+        {
+          duration: 8000,
+          iterations: Infinity,
+          easing: "ease-in-out",
+          direction: index === 0 ? "alternate" : "alternate-reverse",
+        },
+      );
+    });
+  });
+</script>

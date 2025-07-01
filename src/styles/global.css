@@ -1,6 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-kodeMono: "Kode Mono", sans-serif;
+  --font-rubikScribble: "Rubik Scribble";
+  --font-montserrate: "Montserrat";
+  --font-lobster: "Lobster";
+  --color-primaryDark: #2e4057;
+  --color-primaryTextDark: #caffb9;
+  --color-primaryGreenDark: #66a182;
+  --color-lightGreen: #aef78e;
+  --color-yellowGreen: #c0d461;
+  --color-teaGreen: #caffb9;
+}
 
 @font-face {
   font-family: "Rubik Scribble";
@@ -12,6 +23,7 @@
 
 * {
   scrollbar-color: #aef78e #caffb9;
+  scroll-behavior: smooth;
 }
 
 html {

@@ -6,6 +6,7 @@ import {
   LinkedinLogo,
 } from "@/components/Icons";
 import Navigation from "../components/Navigation.astro";
+import PageTransition from "../components/PageTransition";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -15,130 +16,128 @@ import Layout from "../layouts/Layout.astro";
       <Navigation activeNavItem="contact" />
     </header>
 
-    <div
-      class="flex flex-col lg:flex-row w-full h-full justify-between items-center p-4 lg:px-12 py-16 lg:py-24"
-    >
+    <PageTransition client:load>
       <div
-        class="flex gap-6 flex-col font-montserrat text-yellow-200 p-4 lg:p-0 lg:w-1/3"
+        class="flex flex-col lg:flex-row w-full h-full justify-between items-center p-4 lg:px-12 py-16 lg:py-24"
       >
-        <h2
-          class="my-auto text-3xl lg:text-left lg:text-5xl font-bold font-lobster"
+        <div
+          class="flex gap-6 flex-col font-montserrat text-yellow-200 p-4 lg:p-0 lg:w-1/3 contact-left"
         >
-          Let's Connect
-        </h2>
+          <h2
+            class="my-auto text-3xl lg:text-left lg:text-5xl font-bold font-lobster"
+          >
+            Let's Connect
+          </h2>
 
-        <div class="text-sm lg:text-base">
-          <p class="mb-4 text-lightGreen font-kodeMono">
-            I'm currently available for new opportunities and collaborations.
-          </p>
-          <ul class="list-disc flex flex-col gap-3 w-4/5 pl-4">
-            <li>Available for freelance remote work</li>
-            <li>Open to moving countries, if you sponsor visas :)</li>
-            <li>
-              View my <a
-                href="/resume.pdf"
-                class="text-teaGreen font-bold border-b-2 border-teaGreen hover:border-red-500 transition-all"
+          <div class="text-sm lg:text-base">
+            <p class="mb-4 text-lightGreen font-kodeMono">
+              I'm currently available for new opportunities and collaborations.
+            </p>
+            <ul class="list-disc flex flex-col gap-3 w-4/5 pl-4">
+              <li>Available for freelance remote work</li>
+              <li>Open to moving countries, if you sponsor visas :)</li>
+              <li>
+                View my <a
+                  href="/resume.pdf"
+                  class="text-teaGreen font-bold border-b-2 border-teaGreen hover:border-red-500 transition-all"
+                >
+                  resume
+                </a> for more details on what I offer!
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-col gap-4 mt-4">
+            <h3 class="text-teaGreen font-kodeMono text-sm">CONNECT WITH ME</h3>
+            <div class="flex flex-row gap-6 pl-4 social-icons">
+              <a
+                href="https://bsky.app/profile/shreyast.bsky.social"
+                target="_blank"
+                class="text-lightGreen hover:text-teaGreen transition-all duration-300"
+                aria-label="BlueSky"
               >
-                resume
-              </a> for more details on what I offer!
-            </li>
-          </ul>
+                <BlueSkyLogo className="w-6 h-auto" />
+              </a>
+              <a
+                href="https://github.com/shreyas1599"
+                target="_blank"
+                class="text-lightGreen hover:text-teaGreen transition-all duration-300"
+                aria-label="GitHub"
+              >
+                <GithubLogo className="w-6 h-auto" />
+              </a>
+              <a
+                href="mailto:shreyasthirumalai@gmail.com"
+                target="_blank"
+                class="text-lightGreen hover:text-teaGreen transition-all duration-300"
+                aria-label="Email"
+              >
+                <GmailLogo className="w-6 h-auto" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/shreyas-thirumalai-bb142315a/"
+                target="_blank"
+                class="text-lightGreen hover:text-teaGreen transition-all duration-300"
+                aria-label="LinkedIn"
+              >
+                <LinkedinLogo className="w-6 h-auto" />
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div class="flex flex-col gap-4 mt-4">
-          <h3 class="text-teaGreen font-kodeMono text-sm">CONNECT WITH ME</h3>
-          <div class="flex flex-row gap-6 pl-4">
-            <a
-              href="https://bsky.app/profile/shreyast.bsky.social"
-              target="_blank"
-              class="text-lightGreen hover:text-teaGreen transition-all duration-300"
-              aria-label="BlueSky"
+        <div class="w-full lg:w-1/2 p-4 lg:p-0 mt-10 lg:mt-0 contact-form">
+          <div
+            class="bg-primaryGreenDark/30 backdrop-blur-sm p-8 rounded-2xl border border-teaGreen/20 shadow-lg"
+          >
+            <h3 class="text-2xl font-kodeMono text-teaGreen mb-6">
+              Send a Message
+            </h3>
+
+            <form
+              method="POST"
+              action="/api/contact"
+              class="flex flex-col gap-6"
             >
-              <BlueSkyLogo className="w-6 h-auto" />
-            </a>
-            <a
-              href="https://github.com/shreyas1599"
-              target="_blank"
-              class="text-lightGreen hover:text-teaGreen transition-all duration-300"
-              aria-label="GitHub"
-            >
-              <GithubLogo className="w-6 h-auto" />
-            </a>
-            <a
-              href="mailto:shreyasthirumalai@gmail.com"
-              target="_blank"
-              class="text-lightGreen hover:text-teaGreen transition-all duration-300"
-              aria-label="Email"
-            >
-              <GmailLogo className="w-6 h-auto" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/shreyas-thirumalai-bb142315a/"
-              target="_blank"
-              class="text-lightGreen hover:text-teaGreen transition-all duration-300"
-              aria-label="LinkedIn"
-            >
-              <LinkedinLogo className="w-6 h-auto" />
-            </a>
+              <div class="flex flex-col gap-2 form-field">
+                <label for="email" class="text-lightGreen font-kodeMono text-sm"
+                  >EMAIL</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  name="email"
+                  placeholder="your.email@example.com"
+                  class="bg-teaGreen/90 rounded-lg h-12 p-4 focus:outline-none focus:ring-2 focus:ring-primaryDark placeholder-primaryGreenDark/50 text-primaryDark font-montserrat"
+                />
+              </div>
+
+              <div class="flex flex-col gap-2 form-field">
+                <label
+                  for="message"
+                  class="text-lightGreen font-kodeMono text-sm">MESSAGE</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  class="bg-teaGreen/90 rounded-lg p-4 placeholder-primaryGreenDark/50 focus:outline-none focus:ring-2 focus:ring-primaryDark text-primaryDark font-montserrat h-56"
+                  rows="8"
+                  placeholder="Tell me about your project or inquiry..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="bg-teaGreen w-fit px-6 py-3 text-primaryDark font-kodeMono font-semibold hover:bg-opacity-80 rounded-lg text-lg transition-all duration-300 mt-2 self-end form-button"
+              >
+                Send Message
+              </button>
+            </form>
           </div>
         </div>
       </div>
-
-      <div class="w-full lg:w-1/2 p-4 lg:p-0 mt-10 lg:mt-0">
-        <div
-          class="bg-primaryGreenDark/30 backdrop-blur-sm p-8 rounded-2xl border border-teaGreen/20 shadow-lg"
-        >
-          <h3 class="text-2xl font-kodeMono text-teaGreen mb-6">
-            Send a Message
-          </h3>
-
-          <form method="POST" action="/api/contact" class="flex flex-col gap-6">
-            <div class="flex flex-col gap-2">
-              <label for="email" class="text-lightGreen font-kodeMono text-sm"
-                >EMAIL</label
-              >
-              <input
-                type="email"
-                id="email"
-                required
-                name="email"
-                placeholder="your.email@example.com"
-                class="bg-teaGreen/90 rounded-lg h-12 p-4 focus:outline-none focus:ring-2 focus:ring-primaryDark placeholder-primaryGreenDark/50 text-primaryDark font-montserrat"
-              />
-            </div>
-
-            <div class="flex flex-col gap-2">
-              <label for="message" class="text-lightGreen font-kodeMono text-sm"
-                >MESSAGE</label
-              >
-              <textarea
-                id="message"
-                name="message"
-                required
-                class="bg-teaGreen/90 rounded-lg p-4 placeholder-primaryGreenDark/50 focus:outline-none focus:ring-2 focus:ring-primaryDark text-primaryDark font-montserrat h-56"
-                rows="8"
-                placeholder="Tell me about your project or inquiry..."
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              class="bg-teaGreen w-fit px-6 py-3 text-primaryDark font-kodeMono font-semibold hover:bg-opacity-80 rounded-lg text-lg transition-all duration-300 mt-2 self-end"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
+    </PageTransition>
   </section>
-
-  <script>
-    // Form submission feedback
-    const form = document.querySelector("form");
-    form?.addEventListener("submit", (e) => {
-      const button = form.querySelector("button");
-      if (button) button.textContent = "Sending...";
-    });
-  </script>
 </Layout>
