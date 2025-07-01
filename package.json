@@ -1,14 +1,14 @@
 {
-  "name": "personal-site-shreyas",
+  "name": "site",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "preview": "astro build && wrangler pages dev",
     "astro": "astro",
-    "deploy": "astro build && wrangler pages deploy",
+    "preview": "wrangler dev --local",
+    "deploy": "wrangler deploy",
     "cf-typegen": "wrangler types"
   },
   "dependencies": {

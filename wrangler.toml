@@ -1,8 +1,12 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "personal-site-worker"
-compatibility_date = "2024-11-17"
-pages_build_output_dir = "./dist"
+name = "site"
+compatibility_date = "2025-07-01"
+main = "./dist/_worker.js/index.js"
 compatibility_flags = [ "nodejs_compat" ]
+
+[assets]
+binding = "ASSETS"
+directory = "./dist"
 
 # Automatically place your workloads in an optimal location to minimize latency.
 # If you are running back-end logic in a Pages Function, running it closer to your back-end infrastructure
