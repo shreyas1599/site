@@ -1,5 +1,5 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "site"
+name = "portfolio"
 compatibility_date = "2025-07-01"
 main = "./dist/_worker.js/index.js"
 compatibility_flags = [ "nodejs_compat" ]
