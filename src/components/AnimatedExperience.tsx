@@ -358,6 +358,84 @@ const AnimatedExperience: React.FC = () => {
             </div>
           </div>
         </motion.div>
+
+        <motion.div
+          className="w-full rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out overflow-hidden relative group"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          whileHover={{ y: -5, transition: { duration: 0.3 } }}
+        >
+          {/* Glowing border effect */}
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-green-300 via-lightGreen to-teaGreen rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-300"></div>
+
+          <div className="relative bg-teaGreen rounded-2xl p-6 md:p-8">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-6">
+              <div>
+                <span className="bg-primaryDark text-teaGreen px-3 py-1 rounded-full text-xs font-kodeMono tracking-wider">
+                  Freelance
+                </span>
+                <h3 className="font-kodeMono font-extrabold text-2xl text-primaryDark mt-3">
+                  Digitization of Civil Engineering Operations
+                </h3>
+              </div>
+              <span className="text-primaryDark/70 italic text-xs font-kodeMono">
+                2025
+              </span>
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-kodeMono text-primaryDark/80 text-sm mb-2">
+                  OVERVIEW
+                </h4>
+                <p className="font-montserrat text-primaryDark/90 text-sm md:text-base leading-relaxed">
+                  Built a Progressive Web Application (PWA) that automates Civil
+                  Engineering Site Operations and Quality Control at{" "}
+                  <a
+                    href="http://jpinfra.com/"
+                    className="italic"
+                    target="__blank"
+                  >
+                    JP Infra Pvt. Ltd.
+                  </a>{" "}
+                  <a
+                    className="border-b-2 hover:cursor-pointer border-red-500 font-bold hover:border-lightGreen transition-all"
+                    href="/civil-operations"
+                    target="_blank"
+                  >
+                    Read more
+                  </a>{" "}
+                  here if you're interested in implementing the same at your
+                  company!
+                </p>
+              </div>
+
+              <div>
+                <h4 className="text-primaryDark/70 text-xs font-kodeMono mb-2">
+                  TECHNOLOGIES
+                </h4>
+                <div ref={techScope} className="flex flex-wrap gap-2">
+                  {[
+                    "Supabase",
+                    "Cloudflare",
+                    "Astro",
+                    "React",
+                    "Typescript",
+                    "PostgreSQL",
+                  ].map((tech) => (
+                    <span
+                      key={tech}
+                      className="tech-item bg-lightGreen/50 text-primaryDark rounded-md text-center p-1 px-3 text-xs font-bold"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   );

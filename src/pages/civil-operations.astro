@@ -1,0 +1,282 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {
+  Building2,
+  BarChart3,
+  FileText,
+  Smartphone,
+  Shield,
+} from "lucide-react";
+import { Image } from "astro:assets";
+import CivilEngineerIcon from "../../public/engineers.png";
+import { CheckPointCircle } from "@/components/Icons";
+---
+
+<Layout title="Shreyas Thirumalai">
+  <section
+    class="relative bg-gradient-to-br from-green-300 via-lightGreen to-teaGreen py-20"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-5xl font-bold text-green-900 leading-tight mb-2">
+            Digitize Your Civil Engineering
+            <span class="text-primary-600"> Operations</span>
+          </h1>
+          <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+            Transform your construction projects from traditional site
+            management to digital excellence. Streamline quality inspections,
+            track progress, and empower your teams with intelligent automation.
+          </p>
+        </div>
+        <Image src={CivilEngineerIcon} alt="Engineer" class="w-full" />
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="py-20 bg-primaryDark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-100 mb-4">
+          Digitization Process Breakdown
+        </h2>
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+          From project creation to quality inspection and reports generation,
+          our platform handles every aspect of your construction operations
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 text-primaryDark lg:grid-cols-3 gap-8">
+        <div
+          class="bg-gradient-to-r from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+        >
+          <div
+            class="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-2"
+          >
+            <Building2 className="h-8 w-8 text-primary-600" />
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark mb-4">
+            Project Creation
+          </h3>
+          <p class="mb-4">
+            Easily create projects with manageable blocks of your operations.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-center">
+              <CheckPointCircle />Single or Multiple Towers/Wings per project
+            </li>
+            <li class="flex items-center">
+              <CheckPointCircle />
+              Roles for Execution, MEP, Quality, Safety, etc.
+            </li>
+            <li class="flex items-center">
+              <CheckPointCircle />Heads Of Department with Special Permissions
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="bg-gradient-to-r from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+        >
+          <div
+            class="bg-secondary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-2"
+          >
+            <Shield className="h-8 w-8 text-secondary-600" />
+          </div>
+          <h3 class="text-xl font-bold text-primaryDarkmb-4">
+            Quality Manual Digitization
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Quality inspection content is fully digitized and available in both
+            English and Hindi to enhance accessibility and understanding.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-center">
+              <CheckPointCircle />AI-generated translations for Hindi
+            </li>
+            <li class="flex items-center">
+              <CheckPointCircle />End-users can report issues with content
+              through App
+            </li>
+            <li class="flex items-center">
+              <CheckPointCircle />Only authenticated users can view content
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="bg-gradient-to-r from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+        >
+          <div
+            class="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-2"
+          >
+            <FileText className="h-8 w-8 text-secondary-600" />
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark mb-4">
+            Checklist Creation
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Inspection checklists are accompanied by relevant content to guide
+            supervision teams in reviewing the method statement before checklist
+            creation
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-center">
+              <CheckPointCircle /> Checklists placed next to method statements
+            </li>
+            <li class="flex items-center">
+              <CheckPointCircle />Quality Inspectors report Non-Conformance
+            </li>
+            <li class="flex items-center">
+              <CheckPointCircle />Engineer(s) re-work and submit rectifications
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="bg-gradient-to-r from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+        >
+          <div
+            class="bg-secondary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-2"
+          >
+            <Smartphone className="h-8 w-8 text-secondary-600" />
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark mb-4">
+            Mobile Inspections
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Site engineers conduct quality inspections using mobile devices.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-center">
+              <CheckPointCircle />Progressive Web App Technology
+            </li>
+            <li class="flex items-center">
+              <CheckPointCircle />Single App for mobile and desktop
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="bg-gradient-to-r from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+        >
+          <div
+            class="bg-secondary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-2"
+          >
+            <BarChart3 className="h-8 w-8 text-primary-600" />
+          </div>
+          <h3 class="text-xl font-bold text-primaryDark mb-4">Reports</h3>
+          <p class="text-gray-600 mb-4">
+            Generate relevant reports based on customer requirements
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-center">
+              <CheckPointCircle />Approved checklists trigger report generation
+            </li>
+            <li class="flex items-center">
+              <CheckPointCircle />Download weekly, monthly, and yearly reports
+            </li>
+            <li class="flex items-center">
+              <CheckPointCircle />Secure access
+            </li>
+          </ul>
+        </div>
+        <div
+          class="bg-gradient-to-r from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+        >
+          <div
+            class="bg-secondary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-2"
+          >
+            <FileText className="h-8 w-8 text-secondary-600" />
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Others</h3>
+          <p class="text-primaryDark mb-4">Other Highlights</p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-center">
+              <CheckPointCircle />Hostable on cloud or company servers
+            </li>
+            <li class="flex items-center">
+              <CheckPointCircle />Pilot with 10-15 users
+            </li>
+            <li class="flex items-center">
+              <CheckPointCircle />Create Users within Application
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    class="py-20 bg-gradient-to-r from-green-300 via-lightGreen to-teaGreen"
+  >
+    <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-green-900 mb-6">
+        Ready to Transform Your Construction Operations?
+      </h2>
+      <p class="text-xl text-primaryDark/80 mb-8">
+        Join the digital revolution in civil engineering. Send us a note to
+        learn more!
+      </p>
+      <form method="POST" action="/api/contact" class="flex flex-col gap-6">
+        <div class="flex flex-col gap-2">
+          <label for="email" class="text-lightGreen font-kodeMono text-sm"
+            >EMAIL</label
+          >
+          <input
+            type="email"
+            id="email"
+            required
+            name="email"
+            placeholder="your.email@example.com"
+            class="bg-teaGreen/80 drop-shadow-xl rounded-lg h-12 p-4 focus:outline-none focus:ring-2 focus:ring-primaryDark placeholder-primaryGreenDark/80 text-primaryDark font-montserrat"
+          />
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label for="message" class="text-lightGreen font-kodeMono text-sm"
+            >MESSAGE</label
+          >
+          <textarea
+            id="message"
+            name="message"
+            required
+            class="bg-teaGreen/80 drop-shadow-xl rounded-lg p-4 placeholder-primaryGreenDark/50 focus:outline-none focus:ring-2 focus:ring-primaryDark text-primaryDark font-montserrat h-56"
+            rows="8"
+            placeholder="Send us a message to learn more..."></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="bg-primaryDark text-teaGreen w-fit ml-auto px-8 py-4 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 font-semibold"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Using modern browser APIs for animations
+  document.addEventListener("DOMContentLoaded", () => {
+    // Animate background blobs
+    const blobs = document.querySelectorAll(".blob-1, .blob-2");
+
+    blobs.forEach((blob, index) => {
+      // Create a keyframe animation
+      blob.animate(
+        [
+          { transform: "scale(1)", opacity: index === 0 ? "0.1" : "0.05" },
+          { transform: "scale(1.1)", opacity: index === 0 ? "0.15" : "0.08" },
+          { transform: "scale(1)", opacity: index === 0 ? "0.1" : "0.05" },
+        ],
+        {
+          duration: 8000,
+          iterations: Infinity,
+          easing: "ease-in-out",
+          direction: index === 0 ? "alternate" : "alternate-reverse",
+        },
+      );
+    });
+  });
+</script>
