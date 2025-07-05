@@ -1,15 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import {
-  Building2,
-  BarChart3,
-  FileText,
-  Smartphone,
-  Shield,
-} from "lucide-react";
-import { Image } from "astro:assets";
-import CivilEngineerIcon from "../../public/engineers.png";
 import { CheckPointCircle } from "@/components/Icons";
+import { Image } from "astro:assets";
+import {
+  BarChart3,
+  Building2,
+  FileText,
+  Shield,
+  Smartphone,
+} from "lucide-react";
+import CivilEngineerIcon from "../../public/engineers.png";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Shreyas Thirumalai">
@@ -19,24 +19,32 @@ import { CheckPointCircle } from "@/components/Icons";
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h1 class="text-5xl font-bold text-green-900 leading-tight mb-2">
+          <h1
+            class="text-5xl font-bold text-green-900 leading-tight mb-2 post-card animate-on-scroll"
+          >
             Digitize Your Civil Engineering
             <span class="text-primary-600"> Operations</span>
           </h1>
-          <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+          <p
+            class="text-xl text-gray-600 mb-8 leading-relaxed post-card animate-on-scroll"
+          >
             Transform your construction projects from traditional site
             management to digital excellence. Streamline quality inspections,
             track progress, and empower your teams with intelligent automation.
           </p>
         </div>
-        <Image src={CivilEngineerIcon} alt="Engineer" class="w-full" />
+        <Image
+          src={CivilEngineerIcon}
+          alt="Engineer"
+          class="w-full post-card animate-on-scroll"
+        />
       </div>
     </div>
   </section>
 
   <section id="features" class="py-20 bg-primaryDark">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
+      <div class="text-center mb-16 post-card animate-on-scroll">
         <h2 class="text-4xl font-bold text-gray-100 mb-4">
           Digitization Process Breakdown
         </h2>
@@ -48,7 +56,7 @@ import { CheckPointCircle } from "@/components/Icons";
 
       <div class="grid md:grid-cols-2 text-primaryDark lg:grid-cols-3 gap-8">
         <div
-          class="bg-gradient-to-r from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+          class="bg-gradient-to-r from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 post-card animate-on-scroll"
         >
           <div
             class="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-2"
@@ -76,7 +84,7 @@ import { CheckPointCircle } from "@/components/Icons";
         </div>
 
         <div
-          class="bg-gradient-to-r from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+          class="bg-gradient-to-r post-card animate-on-scroll from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
         >
           <div
             class="bg-secondary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-2"
@@ -105,7 +113,7 @@ import { CheckPointCircle } from "@/components/Icons";
         </div>
 
         <div
-          class="bg-gradient-to-r from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+          class="bg-gradient-to-r post-card animate-on-scroll from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
         >
           <div
             class="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-2"
@@ -134,7 +142,7 @@ import { CheckPointCircle } from "@/components/Icons";
         </div>
 
         <div
-          class="bg-gradient-to-r from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+          class="bg-gradient-to-r post-card animate-on-scroll from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
         >
           <div
             class="bg-secondary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-2"
@@ -158,7 +166,7 @@ import { CheckPointCircle } from "@/components/Icons";
         </div>
 
         <div
-          class="bg-gradient-to-r from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+          class="bg-gradient-to-r post-card animate-on-scroll from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
         >
           <div
             class="bg-secondary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-2"
@@ -182,7 +190,7 @@ import { CheckPointCircle } from "@/components/Icons";
           </ul>
         </div>
         <div
-          class="bg-gradient-to-r from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+          class="bg-gradient-to-r post-card animate-on-scroll from-lightGreen to-teaGreen rounded-xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
         >
           <div
             class="bg-secondary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-2"
@@ -207,7 +215,7 @@ import { CheckPointCircle } from "@/components/Icons";
     </div>
   </section>
   <section
-    class="py-20 bg-gradient-to-r from-green-300 via-lightGreen to-teaGreen"
+    class="py-20 bg-gradient-to-r from-green-300 via-lightGreen to-teaGreen animate-on-scroll"
   >
     <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
       <h2 class="text-4xl font-bold text-green-900 mb-6">
@@ -256,27 +264,40 @@ import { CheckPointCircle } from "@/components/Icons";
   </section>
 </Layout>
 
-<script>
-  // Using modern browser APIs for animations
-  document.addEventListener("DOMContentLoaded", () => {
-    // Animate background blobs
-    const blobs = document.querySelectorAll(".blob-1, .blob-2");
+<style>
+  .post-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
 
-    blobs.forEach((blob, index) => {
-      // Create a keyframe animation
-      blob.animate(
-        [
-          { transform: "scale(1)", opacity: index === 0 ? "0.1" : "0.05" },
-          { transform: "scale(1.1)", opacity: index === 0 ? "0.15" : "0.08" },
-          { transform: "scale(1)", opacity: index === 0 ? "0.1" : "0.05" },
-        ],
-        {
-          duration: 8000,
-          iterations: Infinity,
-          easing: "ease-in-out",
-          direction: index === 0 ? "alternate" : "alternate-reverse",
-        },
-      );
+  .post-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script is:inline>
+  // This runs once and handles all navigation
+  function initAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.getAttribute("data-delay") || 0;
+          setTimeout(() => {
+            entry.target.classList.add("visible");
+          }, parseInt(delay));
+          observer.unobserve(entry.target);
+        }
+      });
     });
-  });
+
+    document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+      observer.observe(el);
+    });
+  }
+
+  // Handle initial load and navigation
+  document.addEventListener("DOMContentLoaded", initAnimations);
+  document.addEventListener("astro:page-load", initAnimations);
 </script>
