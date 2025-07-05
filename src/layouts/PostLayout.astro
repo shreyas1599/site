@@ -9,7 +9,7 @@ interface Props {
 const { frontmatter } = Astro.props;
 ---
 
-<Layout title={frontmatter.title}>
+<Layout title={frontmatter.title} description={frontmatter.description}>
   <Navigation activeNavItem="blog" />
   <div class="text-white p-4 flex flex-col gap-10 pt-20">
     <div

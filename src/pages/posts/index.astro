@@ -7,7 +7,10 @@ const techPosts = await getCollection("technical");
 const personalPosts = await getCollection("personal");
 ---
 
-<Layout title={"Blog"}>
+<Layout
+  title={"Blog"}
+  description="Blog of Shreyas Thirumalai - Personal and Technical"
+>
   <Navigation activeNavItem="blog" />
 
   <PageTransition client:load>

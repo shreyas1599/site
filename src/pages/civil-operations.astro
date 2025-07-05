@@ -12,7 +12,10 @@ import CivilEngineerIcon from "../../public/engineers.png";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Shreyas Thirumalai">
+<Layout
+  title="Digitize Civil Operations"
+  description="Transform your Civil Engineering Operations through Digitization of your Site Operation Workflows"
+>
   <section
     class="relative bg-gradient-to-br from-green-300 via-lightGreen to-teaGreen py-20"
   >
@@ -218,14 +221,20 @@ import Layout from "../layouts/Layout.astro";
     class="py-20 bg-gradient-to-r from-green-300 via-lightGreen to-teaGreen animate-on-scroll"
   >
     <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-green-900 mb-6">
+      <h2
+        class="text-4xl font-bold text-green-900 mb-6 post-card animate-on-scroll"
+      >
         Ready to Transform Your Construction Operations?
       </h2>
-      <p class="text-xl text-primaryDark/80 mb-8">
+      <p class="text-xl text-primaryDark/80 mb-8 post-card animate-on-scroll">
         Join the digital revolution in civil engineering. Send us a note to
         learn more!
       </p>
-      <form method="POST" action="/api/contact" class="flex flex-col gap-6">
+      <form
+        method="POST"
+        action="/api/contact"
+        class="flex flex-col gap-6 post-card animate-on-scroll"
+      >
         <div class="flex flex-col gap-2">
           <label for="email" class="text-lightGreen font-kodeMono text-sm"
             >EMAIL</label
